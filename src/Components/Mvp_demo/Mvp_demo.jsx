@@ -7,6 +7,7 @@ const Mvp_demo = () => {
     const [totalAmount, setTotalAmount] = useState(0);
     const [envelopesUsed, setEnvelopesUsed] = useState(0);
     const [notification, setNotification] = useState(null);
+    const [isProcessing, setIsProcessing] = useState(false);
 
     const handleInputChange = (e) => {
         const value = e.target.value;
@@ -24,19 +25,24 @@ const Mvp_demo = () => {
 
     const handlePay = () => {
         if (!amount || parseInt(amount) <= 0) return;
-        const envelope = Math.floor(Math.random() * 200) + 1;
-        const newTransaction = {
-            guest: `Guest ${transactions.length + 1}`,
-            envelope,
-            amount: parseInt(amount),
-            time: new Date().toLocaleTimeString(),
-        };
-        const updatedTransactions = [newTransaction, ...transactions];
-        setTransactions(updatedTransactions);
-        setTotalAmount((prev) => prev + parseInt(amount));
-        setEnvelopesUsed((prev) => prev + 1);
-        showNotification(envelope, amount);
-        setAmount('');
+        setIsProcessing(true);
+
+        setTimeout(() => {
+            const envelope = Math.floor(Math.random() * 200) + 1;
+            const newTransaction = {
+                guest: `Guest ${transactions.length + 1}`,
+                envelope,
+                amount: parseInt(amount),
+                time: new Date().toLocaleTimeString(),
+            };
+
+            setTransactions([newTransaction, ...transactions]);
+            setTotalAmount((prev) => prev + parseInt(amount));
+            setEnvelopesUsed((prev) => prev + 1);
+            showNotification(envelope, amount);
+            setAmount('');
+            setIsProcessing(false);
+        }, 500);
     };
 
     const handleReset = () => {
@@ -61,6 +67,7 @@ const Mvp_demo = () => {
                 time: new Date().toLocaleTimeString(),
             };
         });
+
         setTransactions((prev) => [...generated, ...prev]);
         setTotalAmount((prev) =>
             prev + generated.reduce((sum, t) => sum + t.amount, 0)
@@ -83,8 +90,8 @@ const Mvp_demo = () => {
             <div className={Mvp_demoCss.statusBar}>
                 <span className={Mvp_demoCss.liveTag}>🟢 Live Demo</span>
                 <span className={Mvp_demoCss.projectId}>
-          Project: DEMO40000125062512000001
-        </span>
+                    Project: DEMO40000125062512000001
+                </span>
             </div>
 
             <div className={Mvp_demoCss.stats}>
@@ -121,31 +128,38 @@ const Mvp_demo = () => {
             <div className={Mvp_demoCss.main}>
                 <div className={Mvp_demoCss.simulator}>
                     <h2>📱 Guest Transaction Simulator</h2>
-                    <p>
-                        Enter amount to simulate a guest scanning QR and making payment
-                    </p>
-                    <input
-                        type="tel"
-                        inputMode="numeric"
-                        pattern="[0-9]*"
-                        value={amount}
-                        onChange={handleInputChange}
-                        className={Mvp_demoCss.input}
-                        placeholder="Enter Amount"
-                    />
-                    <button onClick={handlePay} className={Mvp_demoCss.payBtn}>
-                        Pay & Get Envelope
-                    </button>
+
+                    <div className={Mvp_demoCss.simulateBox}>
+                        <p className={Mvp_demoCss.simLabel}>Simulate Guest Payment</p>
+                        <p className={Mvp_demoCss.simSubtext}>
+                            Enter amount to simulate a guest scanning QR and making payment
+                        </p>
+                        <div className={Mvp_demoCss.inputGroup}>
+                            <input
+                                type="text"
+                                inputMode="numeric"
+                                value={amount}
+                                onChange={handleInputChange}
+                                className={Mvp_demoCss.input}
+                                placeholder="Enter Amount"
+                            />
+                            <button
+                                onClick={handlePay}
+                                className={`${Mvp_demoCss.payBtn} ${isProcessing ? Mvp_demoCss.processing : ''}`}
+                                disabled={isProcessing}
+                            >
+                                {isProcessing ? 'Processing...' : 'Pay & Get Envelope'}
+                            </button>
+                        </div>
+                    </div>
 
                     <div className={Mvp_demoCss.btnGroup}>
-                        <button onClick={handleGenerateTransactions}>
-                            Generate 15 Test Transactions
-                        </button>
+                        <button onClick={handleGenerateTransactions}>Generate 15 Test Transactions</button>
                         <button onClick={handleReset}>Reset Demo</button>
                     </div>
 
                     <div className={Mvp_demoCss.tips}>
-                        <b>🛈 MVP Testing Tips</b>
+                        <b>⚠️ MVP Testing Tips</b>
                         <p>
                             Use different amounts (₹101, ₹501, ₹1001) to test various
                             scenarios. Share this demo with potential hosts for feedback.
@@ -158,9 +172,7 @@ const Mvp_demo = () => {
                     <div className={Mvp_demoCss.txList}>
                         {transactions.length === 0 ? (
                             <p className={Mvp_demoCss.noTx}>
-                                🎁 No transactions yet
-                                <br />
-                                Start simulating guest payments
+                                🎁 No transactions yet<br />Start simulating guest payments
                             </p>
                         ) : (
                             transactions.map((t, i) => (
@@ -169,9 +181,7 @@ const Mvp_demo = () => {
                                         <b>{t.guest}</b>
                                         <p>Envelope #{t.envelope}</p>
                                     </div>
-                                    <div className={Mvp_demoCss.amount}>
-                                        ₹{t.amount.toLocaleString()}
-                                    </div>
+                                    <div className={Mvp_demoCss.amount}>₹{t.amount.toLocaleString()}</div>
                                     <div className={Mvp_demoCss.time}>{t.time}</div>
                                 </div>
                             ))
