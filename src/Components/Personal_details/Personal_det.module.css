@@ -2,19 +2,21 @@
 .page {
     background: linear-gradient(to bottom right, #fff5eb, #fffdee);
     min-height: 100vh;
+    min-width: 100vw;
     display: flex;
     flex-direction: column;
 }
 
 /* Navbar */
 .navbar {
-    width: 100%;
+    width: 100vw;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 18px 25px;
     border-bottom: 1px solid #ffe4cc;
-    background-color: #fff5eb;
+    background-color: whitesmoke;
 }
 
 .leftNav {

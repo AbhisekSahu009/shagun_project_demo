@@ -1,8 +1,28 @@
 import React from 'react';
+import { FaGift, FaArrowLeft } from 'react-icons/fa';
 import Event_detCss from './../Event_details/Event_det.module.css';
 
 export default function Event_det() {
     return (
+
+
+        <div>
+            {/* Navbar */}
+            <div className={Event_detCss.navbar}>
+                <div className={Event_detCss.left}>
+                    <FaArrowLeft className={Event_detCss.backIcon} />
+                    <FaGift className={Event_detCss.giftIcon} />
+                    <span className={Event_detCss.title}>Shagun</span>
+                </div>
+                <div className={Event_detCss.right}>
+                    <div className={`${Event_detCss.circle} ${Event_detCss.active}`}>1</div>
+                    <div className={`${Event_detCss.circle} ${Event_detCss.active}`}>2</div>
+                    <div className={`${Event_detCss.circle} ${Event_detCss.active}`}>3</div>
+                    <div className={Event_detCss.circle}>4</div>
+                    <div className={Event_detCss.check}>&#10003;</div>
+                </div>
+            </div>
+
         <div className={Event_detCss.container}>
             <div className={Event_detCss.card}>
                 <h2 className={Event_detCss.heading}>Event Details</h2>
@@ -64,6 +84,7 @@ export default function Event_det() {
                     <button className={Event_detCss.button} type="submit">Continue</button>
                 </form>
             </div>
+        </div>
         </div>
     );
 }
