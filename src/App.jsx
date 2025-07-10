@@ -10,6 +10,7 @@ import BudgetBank from "./Components/Budget_bank/Budget_bank.jsx";
 import Budget_bank from "./Components/Budget_bank/Budget_bank.jsx";
 import Reg_com from "./Components/Registration_complete/Reg_com.jsx";
 import Mvp_demo from "./Components/Mvp_demo/Mvp_demo.jsx";
+import Host_dash from "./Components/Host_dashboard/Host_dash.jsx";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Budget_bank/>
         <Reg_com/>
         <Mvp_demo/>
+        <Host_dash/>
     </>
   )
 }

@@ -1,10 +1,68 @@
+.wrapper {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #fef4f2, #fdf7f4, #fefae9);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid #f2e6e0;
+    background-color: white;
+}
+
+.navLeft {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.backIcon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.logoIcon {
+    width: 28px;
+    height: 28px;
+}
+
+.appName {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f24822;
+}
+
+.steps {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.step {
+    width: 24px;
+    height: 24px;
+    background-color: #e6e6e6;
+    border-radius: 50%;
+    font-size: 13px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active {
+    background-color: #ff6200;
+    color: white;
+}
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(to bottom right, #fef4f2, #fdf7f4, #fefae9);
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 .card {
@@ -82,23 +140,28 @@
 }
 
 @media (max-width: 480px) {
-    .card {
-        padding: 20px 15px;
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container {
+        padding: 30px 15px;
     }
 
     .title {
         font-size: 1.3rem;
     }
 
-    .input,
-    .sendBtn,
-    .verifyBtn {
-        font-size: 0.95rem;
-    }
-
     .icon {
         width: 40px;
         height: 40px;
         padding: 8px;
+    }
+
+    .input,
+    .sendBtn,
+    .verifyBtn {
+        font-size: 0.95rem;
     }
 }
