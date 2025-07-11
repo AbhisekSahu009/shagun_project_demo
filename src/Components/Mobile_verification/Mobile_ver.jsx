@@ -12,7 +12,7 @@ export default function Mobile_ver() {
                 <div className={Mobile_verCss.left}>
                     <FaArrowLeft className={Mobile_verCss.backIcon} />
                     <FaGift className={Mobile_verCss.giftIcon} />
-                    <span className={Mobile_verCss.title}>Shagun</span>
+                    <span className={Mobile_verCss.titlenav}>Shagun</span>
                 </div>
                 <div className={Mobile_verCss.right}>
                     <div className={`${Mobile_verCss.circle} ${Mobile_verCss.active}`}>1</div>

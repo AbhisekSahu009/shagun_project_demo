@@ -37,7 +37,7 @@
     flex-shrink: 0;
 }
 
-.title {
+.titlenav {
     font-weight: 600;
     font-size: 1.2rem;
     color: #f45b0b;
@@ -85,7 +85,7 @@
 
 /* Responsive Navbar Styling */
 @media (max-width: 480px) {
-    .title {
+    .titlenav {
         font-size: 1rem;
     }
 
@@ -101,7 +101,7 @@
 }
 
 @media (max-width: 360px) {
-    .title {
+    .titlenav {
         font-size: 0.9rem;
     }
 
