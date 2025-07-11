@@ -1,3 +1,4 @@
+/* ✅ RESPONSIVE NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -5,37 +6,45 @@
     padding: 12px 20px;
     background-color: #fff;
     border-bottom: 1px solid #eee;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;       /* ✅ Prevent wrapping */
+    overflow-x: auto;        /* ✅ Allow horizontal scroll */
+    gap: 12px;
 }
 
 .left {
     display: flex;
     align-items: center;
     gap: 12px;
+    flex-shrink: 0;
+    min-width: 0;
 }
 
 .backIcon {
     font-size: 16px;
     cursor: pointer;
     color: #333;
+    flex-shrink: 0;
 }
 
 .giftIcon {
     font-size: 20px;
     color: #f45b0b;
+    flex-shrink: 0;
 }
 
 .title {
     font-weight: 600;
     font-size: 1.2rem;
     color: #f45b0b;
+    white-space: nowrap;
 }
 
 .right {
     display: flex;
     align-items: center;
     gap: 8px;
-    flex-wrap: wrap;
+    flex-shrink: 0;
+    min-width: 0;
 }
 
 .circle {
@@ -49,12 +58,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.steps {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-shrink: 0;
 }
 
 .step {
@@ -67,6 +71,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .active {
@@ -78,18 +83,47 @@
     color: #999;
 }
 
+/* ✅ MEDIA QUERIES FOR SMALLER SCREENS */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1rem;
+    }
+
+    .backIcon,
+    .giftIcon {
+        font-size: 16px;
+    }
+
+    .circle,
+    .step {
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
+    }
+
+    .navbar {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media (max-width: 360px) {
+    .title {
+        font-size: 0.9rem;
+    }
+
+    .circle,
+    .step {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
+}
 
 
-
-
-
-
-
-
-
-
-
-
+/* ✅ REMAINING STYLES */
 
 .container {
     display: flex;
