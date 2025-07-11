@@ -1,3 +1,42 @@
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #f2c0a2;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.backButton {
+    color: #e56a1d;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.backButton:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    height: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .container {
     background-color: #ffd6dc;
     display: flex;

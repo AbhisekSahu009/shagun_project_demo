@@ -2,15 +2,21 @@ import React from 'react';
 import Mobile_verCss from './../Mobile_verification/Mobile_ver.module.css';
 import giftIcon from './../../assets/react.svg'; // Replace with actual gift icon
 import phoneIcon from './../../assets/react.svg'; // Replace with actual phone icon
-import backIcon from './../../assets/react.svg'; // Replace with actual back icon
+import backIcon from './../../assets/react.svg';
+import {FaArrowLeft, FaCheck, FaGift} from "react-icons/fa";
+import Event_detCss from "../Event_details/Event_det.module.css";
+import Personal_detCss from "../Personal_details/Personal_det.module.css"; // Replace with actual back icon
 
 export default function Mobile_ver() {
     return (
         <div className={Mobile_verCss.wrapper}>
             <nav className={Mobile_verCss.navbar}>
                 <div className={Mobile_verCss.navLeft}>
-                    <img src={backIcon} alt="back" className={Mobile_verCss.backIcon} />
-                    <img src={giftIcon} alt="logo" className={Mobile_verCss.logoIcon} />
+                    {/*<img src={backIcon} alt="back" className={Mobile_verCss.backIcon} />*/}
+
+                    {/*<img src={giftIcon} alt="logo" className={Mobile_verCss.logoIcon} />*/}
+                    <FaArrowLeft className={Mobile_verCss.backIcon} />
+                    <FaGift className={Mobile_verCss.giftIcon} />
                     <span className={Mobile_verCss.appName}>Shagun</span>
                 </div>
                 <div className={Mobile_verCss.steps}>
@@ -18,7 +24,7 @@ export default function Mobile_ver() {
                     <span className={Mobile_verCss.step}>2</span>
                     <span className={Mobile_verCss.step}>3</span>
                     <span className={Mobile_verCss.step}>4</span>
-                    <span className={Mobile_verCss.step}>✓</span>
+                    <span className={Mobile_verCss.step}><FaCheck /></span>
                 </div>
             </nav>
 

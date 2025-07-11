@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Budget_bankCss from './../Budget_bank/Budget_bank.module.css';
-import { FaInfoCircle, FaCreditCard } from 'react-icons/fa';
+import {FaInfoCircle, FaCreditCard, FaArrowLeft, FaGift, FaCheck} from 'react-icons/fa';
+import Event_detCss from "../Event_details/Event_det.module.css";
 
 export default function Budget_bank() {
     const [formData, setFormData] = useState({
@@ -44,6 +45,27 @@ export default function Budget_bank() {
     };
 
     return (
+
+
+        <div>
+
+            {/* Navbar */}
+        <div className={Budget_bankCss.navbar}>
+            <div className={Budget_bankCss.left}>
+                <FaArrowLeft className={Budget_bankCss.backIcon} />
+                <FaGift className={Budget_bankCss.giftIcon} />
+                <span className={Budget_bankCss.title}>Shagun</span>
+            </div>
+            <div className={Budget_bankCss.right}>
+                <div className={`${Budget_bankCss.circle} ${Budget_bankCss.active}`}>1</div>
+                <div className={`${Budget_bankCss.circle} ${Budget_bankCss.active}`}>2</div>
+                <div className={`${Budget_bankCss.circle} ${Budget_bankCss.active}`}>3</div>
+                <div className={`${Budget_bankCss.circle} ${Budget_bankCss.active}`}>4</div>
+                <span className={Budget_bankCss.step}><FaCheck /></span>
+            </div>
+        </div>
+
+
         <form className={Budget_bankCss.container} onSubmit={handleSubmit}>
             <h2 className={Budget_bankCss.heading}>Budget & Bank Details</h2>
             <div className={Budget_bankCss.row}>
@@ -192,5 +214,6 @@ export default function Budget_bank() {
                 </div>
             )}
         </form>
+        </div>
     );
 }

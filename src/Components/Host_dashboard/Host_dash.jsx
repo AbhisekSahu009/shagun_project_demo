@@ -1,8 +1,25 @@
 import React from 'react';
 import Host_dashCss from './../Host_dashboard/Host_dash.module.css';
+import Sign_login_topCss from "../Sign_login_top/Sign_login_top.module.css";
+import logo from "../../assets/react.svg";
 
 const Host_dash = () => {
     return (
+
+
+        <div>
+
+
+
+        <div className={Host_dashCss.topBar}>
+            <a href="#" className={Host_dashCss.backButton}>
+                &#8592; Back to Home
+            </a>
+            <img src={logo} alt="Shagun Logo" className={Host_dashCss.logo} />
+        </div>
+
+
+
         <div className={Host_dashCss.container}>
             <div className={Host_dashCss.card}>
                 {/*<div className={Host_dashCss.header}>*/}
@@ -76,6 +93,9 @@ const Host_dash = () => {
                     </ul>
                 </div>
             </div>
+        </div>
+
+
         </div>
     );
 };

@@ -1,3 +1,96 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.backIcon {
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+}
+
+.giftIcon {
+    font-size: 20px;
+    color: #f45b0b;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #f45b0b;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.circle {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #ddd;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.steps {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.step {
+    width: 24px;
+    height: 24px;
+    background-color: #e6e6e6;
+    border-radius: 50%;
+    font-size: 13px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active {
+    background-color: #f45b0b;
+}
+
+.check {
+    font-size: 16px;
+    color: #999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .container {
     display: flex;
     justify-content: center;

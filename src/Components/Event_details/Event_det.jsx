@@ -1,12 +1,15 @@
 import React from 'react';
-import { FaGift, FaArrowLeft } from 'react-icons/fa';
+import {FaGift, FaArrowLeft, FaCheck} from 'react-icons/fa';
 import Event_detCss from './../Event_details/Event_det.module.css';
+import Mobile_verCss from "../Mobile_verification/Mobile_ver.module.css";
 
 export default function Event_det() {
     return (
 
 
         <div>
+
+
             {/* Navbar */}
             <div className={Event_detCss.navbar}>
                 <div className={Event_detCss.left}>
@@ -19,9 +22,14 @@ export default function Event_det() {
                     <div className={`${Event_detCss.circle} ${Event_detCss.active}`}>2</div>
                     <div className={`${Event_detCss.circle} ${Event_detCss.active}`}>3</div>
                     <div className={Event_detCss.circle}>4</div>
-                    <div className={Event_detCss.check}>&#10003;</div>
+                    <span className={Event_detCss.step}><FaCheck /></span>
                 </div>
             </div>
+
+
+
+
+
 
         <div className={Event_detCss.container}>
             <div className={Event_detCss.card}>

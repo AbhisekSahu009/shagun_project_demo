@@ -19,9 +19,16 @@
 }
 
 .backIcon {
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
     width: 20px;
     height: 20px;
-    cursor: pointer;
+}
+
+.giftIcon {
+    font-size: 20px;
+    color: #f45b0b;
 }
 
 .logoIcon {
