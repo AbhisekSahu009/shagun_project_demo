@@ -13,44 +13,61 @@
     justify-content: space-between;
     align-items: center;
     padding: 12px 20px;
-    border-bottom: 1px solid #f2e6e0;
-    background-color: white;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    gap: 12px;
+    flex-wrap: nowrap;       /* ✅ Prevent wrapping */
+    overflow-x: auto;        /* ✅ Scroll instead of wrapping */
 }
 
-.navLeft {
+.left {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-shrink: 0;
+    min-width: 0;
 }
 
 .backIcon {
     font-size: 16px;
     cursor: pointer;
     color: #333;
-    width: 20px;
-    height: 20px;
+    flex-shrink: 0;
 }
 
 .giftIcon {
     font-size: 20px;
     color: #f45b0b;
+    flex-shrink: 0;
 }
 
-.logoIcon {
-    width: 28px;
-    height: 28px;
+.title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #f45b0b;
+    white-space: nowrap;
 }
 
-.appName {
-    font-size: 18px;
-    font-weight: bold;
-    color: #f24822;
-}
-
-.steps {
+.right {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    flex-shrink: 0;
+    min-width: 0;
+}
+
+.circle {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #ddd;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .step {
@@ -63,12 +80,48 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .active {
-    background-color: #ff6200;
-    color: white;
+    background-color: #f45b0b;
 }
+
+.check {
+    font-size: 16px;
+    color: #999;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1rem;
+    }
+
+    .backIcon, .giftIcon {
+        font-size: 16px;
+    }
+
+    .circle, .step {
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .title {
+        font-size: 0.9rem;
+    }
+
+    .circle, .step {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
+}
+
+
 
 
 
@@ -176,10 +229,30 @@
         height: 22px;
         font-size: 11px;
     }
+    .title {
+        font-size: 1rem;
+    }
+
+    .backIcon,
+    .giftIcon {
+        font-size: 16px;
+    }
+
+    .circle,
+    .step {
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
+    }
 
     .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
     }
+
+
 }
+

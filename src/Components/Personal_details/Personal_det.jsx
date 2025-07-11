@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Personal_detCss from './../Personal_details/Personal_det.module.css';
 import { FaUpload, FaArrowLeft, FaGift, FaCheck } from 'react-icons/fa';
 import Mobile_verCss from "../Mobile_verification/Mobile_ver.module.css";
+import Budget_bankCss from "../Budget_bank/Budget_bank.module.css";
 
 export default function Personal_det() {
     const [selectedFile, setSelectedFile] = useState(null);
@@ -12,26 +13,22 @@ export default function Personal_det() {
 
     return (
         <div className={Personal_detCss.page}>
-            {/* Navigation Bar */}
 
-
-            <nav className={Personal_detCss.navbar}>
-                <div className={Personal_detCss.navLeft}>
-                    {/*<img src={backIcon} alt="back" className={Mobile_verCss.backIcon} />*/}
-
-                    {/*<img src={giftIcon} alt="logo" className={Mobile_verCss.logoIcon} />*/}
+            {/* Navbar */}
+            <div className={Personal_detCss.navbar}>
+                <div className={Personal_detCss.left}>
                     <FaArrowLeft className={Personal_detCss.backIcon} />
                     <FaGift className={Personal_detCss.giftIcon} />
-                    <span className={Personal_detCss.appName}>Shagun</span>
+                    <span className={Personal_detCss.title}>Shagun</span>
                 </div>
-                <div className={Personal_detCss.steps}>
-                    <span className={`${Personal_detCss.step} ${Personal_detCss.active}`}>1</span>
-                    <span className={`${Personal_detCss.step} ${Personal_detCss.active}`}>2</span>
-                    <span className={Personal_detCss.step}>3</span>
-                    <span className={Personal_detCss.step}>4</span>
+                <div className={Personal_detCss.right}>
+                    <div className={`${Personal_detCss.circle} ${Personal_detCss.active}`}>1</div>
+                    <div className={`${Personal_detCss.circle} ${Personal_detCss.active}`}>2</div>
+                    <div className={Personal_detCss.step}>3</div>
+                    <div className={Personal_detCss.step}>4</div>
                     <span className={Personal_detCss.step}><FaCheck /></span>
                 </div>
-            </nav>
+            </div>
 
             {/* Main Form Section */}
             <div className={Personal_detCss.background}>
